@@ -3,7 +3,11 @@ services:
   netdata:
     image: netdata/netdata
     container_name: netdata
-    hostname: ubuntu_pruebas.miracledevs.local
+    hostname: prueba.local
+    environment:
+      - NETDATA_CLAIM_TOKEN=<token>
+      - NETDATA_CLAIM_URL=https://app.netdata.cloud
+      - NETDATA_CLAIM_ROOMS=<claim room>
     ports:
       - 19999:19999
     restart: unless-stopped
